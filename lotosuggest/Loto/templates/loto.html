@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Loto Suggest</title>
+</head>
+<body>
+    <div class="container">
+        <section class="welcome">
+            <div class="header">
+                <h1>Welcome to Loto Suggest</h1> 
+                <p>Chose one game to get the suggestion from the system:</p>
+            </div>
+        </section>
+        <section class="the-game">
+            <form action="" method="post">
+                {% csrf_token %}
+                <label for="Loto">Mega SENA</label>
+                <input type="radio" name="Loto" value="Loto" id="Loto" autofocus>
+                <label for="Loto-Facil">Loto-Facil</label>
+                <input type="radio" name="Loto" value="Loto-Facil" id="Loto-Facil">
+                <input type="submit" value="OK">
+            </form>
+            <div class="result">
+                <p>{{resultado}}</p>
+            </div>
+        </section>
+        <footer>
+            <p>All rights reserved</p>
+        </footer>
+    </div>
+</body>
+</html>

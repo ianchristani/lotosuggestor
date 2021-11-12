@@ -1,0 +1,10 @@
+@keyframes anima {
+    from {color: red;}
+    to {color: blue;}
+}
+
+.header h1 {
+    animation-name: anima;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
