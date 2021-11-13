@@ -12,17 +12,17 @@
     <div class="container" id="bk" style="background-image: url('{% static "bk1.jpg" %}')">
             <section class="welcome">
                 <div class="header">
-                    <h1>Welcome to Loto Suggest</h1> 
+                    <h1>Welcome to Loto Suggestor</h1> 
                     <p>Chose one game to get the suggestion from the system:</p>
                 </div>
             </section>
             <section class="the-game">
                 <form action="" method="post">
                     {% csrf_token %}
-                    <label for="Loto">Mega SENA</label>
-                    <input type="radio" name="Loto" value="Loto" id="Loto" autofocus>
-                    <label for="Loto-Facil">Loto-Facil</label>
-                    <input type="radio" name="Loto" value="Loto-Facil" id="Loto-Facil">
+                    <label for="range">Enter the final game range (the number 1 is already the first one):</label>
+                    <input type="number" name="range" min="2" max="100" autofocus>
+                    <label for="Loto-Facil">How many numbers to chose:</label>
+                    <input type="number" name="amount" value="Loto-Facil" min="1" max="100">
                     <input type="submit" value="OK">
                 </form>
                 <div class="result">
