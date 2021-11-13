@@ -6,24 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    <title>Loto Suggest</title>
+    <title>Loto Suggestor</title>
 </head>
 <body>
     <div class="container" id="bk" style="background-image: url('{% static "bk1.jpg" %}')">
             <section class="welcome">
                 <div class="header">
                     <h1>Welcome to Loto Suggestor</h1> 
-                    <p>Chose one game to get the suggestion from the system:</p>
+                    <p>Fill the form to get the suggestion from the system:</p>
                 </div>
             </section>
             <section class="the-game">
-                <form action="" method="post">
+                <form method="post">
                     {% csrf_token %}
-                    <label for="range">Enter the final game range (the number 1 is already the first one):</label>
-                    <input type="number" name="range" min="2" max="100" autofocus>
-                    <label for="Loto-Facil">How many numbers to chose:</label>
-                    <input type="number" name="amount" value="Loto-Facil" min="1" max="100">
-                    <input type="submit" value="OK">
+                    <div class="range">
+                        <label for="range">Enter with the <strong>final</strong> game range (the number 1 is already the first one):</label>
+                        <input type="number" name="range" min="2" max="100" autofocus required>
+                    </div>
+                    <div class="amount">
+                        <label for="amount">How many numbers to chose:</label>
+                        <input type="number" name="amount" value="Loto-Facil" min="1" max="100" required>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="OK">
+                    </div>
                 </form>
                 <div class="result">
                     <p>{{resultado}}</p>

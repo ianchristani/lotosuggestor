@@ -10,7 +10,7 @@ html, body {
 /* welcome */
 .container {
     text-align: center;
-    margin-top: 10%;
+    margin-top: 7%;
     width: 100%;
     height: auto;
 }
@@ -21,10 +21,14 @@ h1 {
 }
 
 .header {
-    padding-top: 1%;
+    padding-top: .5%;
 }
 
 /* the game */
+.range, .amount, .submit {
+    line-height: 2.5rem;
+}
+
 .result {
     font-size: 1.5rem;
     font-style: bold;
@@ -35,9 +39,26 @@ footer {
     padding-bottom: .3%;
 }
 
-/* animations */
+input {
+    width: 3rem;
+    border-style: none;
+}
 
-@keyframes anime {
+.submit input {
+    width: 5rem;
+    height: 2rem;
+    font-style: bold;
+    background-image: url('../static/raining-money-10.gif');
+    transition: .5s;
+}
+
+.submit input:hover {
+    width: 6rem;
+    height: 2.5rem;
+}
+
+/* animations */
+@keyframes result {
     0% {color: rgb(2, 165, 2)}
     25% {color: blue}
     50% {color: rgb(121, 0, 121)}
@@ -46,7 +67,7 @@ footer {
 }
 
 .result {
-    animation-name: anime;
+    animation-name: result;
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
