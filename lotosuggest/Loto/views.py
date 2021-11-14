@@ -8,7 +8,7 @@ def loto(request):
     if request.method == 'POST':
         range_ = int(request.POST.get('range',False))
         amount = int(request.POST.get('amount',False))
-        while cont <= amount:
+        while cont < amount:
             n = randint(1,range_+1)
             if n not in lista:
                 lista.append(n)
